@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/private/etc/apache2/original/extra'
 let g:netrw_dirhist_2='/Users/den-shapkin/Homestead'
+let g:netrw_dirhist_3='/Users/den-shapkin/Sites'
+let g:netrw_dirhist_4='/Users/den-shapkin/Sites/www'
+let g:netrw_dirhist_5='/Users/den-shapkin/Sites/www/cleanup'
+let g:netrw_dirhist_6='/Users/den-shapkin/Sites/www/cleanup/application'
+let g:netrw_dirhist_7='/Users/den-shapkin/Sites/www/cleanup/application/classes'
+let g:netrw_dirhist_8='/Users/den-shapkin/Sites/www/cleanup/application/classes/Controller'
