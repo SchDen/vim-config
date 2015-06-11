@@ -1,11 +1,10 @@
-"Some settings to enable the theme:
 syntax enable
 set background=dark
 set tabstop=4
-let g:solarized_termcolors = 256  " New line!!
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-"colorscheme solarized
+
+" THEME
+let g:rehash256 = 1
+let g:molokai_original = 1
 
 "------------------------------------------------
 " VIM LIB 
@@ -15,10 +14,18 @@ set rtp=~/.vim/bundle/vim_lib
 call vim_lib#sys#Autoload#init('~/.vim', 'bundle') " Адрес до вашего ~/.vim/bundle
 
 Plugin 'vim_lib'
+Plugin 'vim_plugmanager'
 
 filetype indent plugin on
 "------------------------------------------------
-" VIM LIB 
+" /VIM LIB 
 "------------------------------------------------
 
-" Другие плагины
+
+"------------------------------------------------
+" PLUGINS
+"------------------------------------------------
+"------------------------------------------------
+" /PLUGINS
+"------------------------------------------------
+
