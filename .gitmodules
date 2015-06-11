@@ -1,0 +1,3 @@
+[submodule "bundle/vim_lib"]
+	path = bundle/vim_lib
+	url = https://github.com/Bashka/vim_lib.git
