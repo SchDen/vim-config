@@ -30,6 +30,14 @@ call vim_lib#sys#Autoload#init('~/.vim', 'bundle') " Адрес до вашег�
 Plugin 'vim_lib'
 Plugin 'vim_plugmanager'
 
+source ~/.vim/plugins.vim
+" ----------------
+"  Plugin settings
+" ----------------
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 filetype indent plugin on
 "------------------------------------------------
 " /VIM LIB 
