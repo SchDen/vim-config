@@ -6,6 +6,7 @@ set number
 
 " THEME
 let g:molokai_original = 1
+set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
 
 "------------------------------------------------
 " GUI
@@ -13,7 +14,6 @@ let g:molokai_original = 1
 if has('gui_running')
 	" THEME
 	colorscheme apprentice
-	set guifont=Courier:h14
 endif
 
 "------------------------------------------------
@@ -34,9 +34,10 @@ source ~/.vim/plugins.vim
 " ----------------
 "  Plugin settings
 " ----------------
-" vim-airline
+"--- vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+"--- /vim-airline
 
 filetype indent plugin on
 "------------------------------------------------
