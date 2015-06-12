@@ -12,7 +12,7 @@ let g:molokai_original = 1
 "------------------------------------------------
 if has('gui_running')
 	" THEME
-	colorscheme monokai	
+	colorscheme apprentice
 	set guifont=Courier:h14
 endif
 
