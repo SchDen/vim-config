@@ -32,7 +32,19 @@ set lazyredraw                          " Don't redraw screen when excuting
 set mouse=a                             " Enable mouse support.
 set mousehide                           " Hide the mouse cursor when typing.
 set number
+set scrolloff=4                         " Keep 4 lines above/below the cursor.
+set shiftwidth=4                        " Use four spaces when auto-indenting.
+set smartindent                         " Smart autoindenting for new lines.
+set smarttab                            " Use shiftwidth when using <Tab> in
+                                        " front of a line.
+set softtabstop=4                       " How many spaces should a tab be
+                                        " when hitting <Tab> or backspace.
+set synmaxcol=121                       " No syntax highlighting on long lines.
 
+set wildmenu                            " Autocomplete commands.
+set wildmode=longest:full,full          " Autocomplete til the longest common
+                                        " string and the next full match.
+										"
 
 if has('gui_running')
 	" THEME
@@ -73,6 +85,23 @@ filetype indent plugin on
 "------------------------------------------------
 
 "------------------------------------------------
+" AUTO COMMAND
+"------------------------------------------------
+if has('autocmd')                       
+	augroup vimrc
+		autocmd!
+
+		" Strip whitespace from various filetypes that I use.
+		 autocmd BufWritePre *.css,*.html,*.md,*.php,*.py,*.rb,*.js,*.vim
+			\ silent! :StripWhitespace
+
+	augroup END
+endif
+"------------------------------------------------
+" /AUTO COMMAND
+"------------------------------------------------
+
+"------------------------------------------------
 " BASE BINDS
 "------------------------------------------------
 " Use ctrl-[hjkl] to select the active split!
@@ -83,6 +112,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 "------------------------------------------------
 " /BASE BINDS
 "------------------------------------------------
+
 
 "------------------------------------------------
 " ABBRS
