@@ -104,15 +104,21 @@ endif
 "------------------------------------------------
 " BASE BINDS
 "------------------------------------------------
+
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <leader>w :write<CR>
+vnoremap <leader>w <esc>:write<CR>
+inoremap <leader>w <esc>:write<CR>
+
 "------------------------------------------------
 " /BASE BINDS
 "------------------------------------------------
-
 
 "------------------------------------------------
 " ABBRS
