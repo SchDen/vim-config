@@ -20,7 +20,12 @@ let mapleader = " "
 " THEME
 "------------------------------------------------
 let g:molokai_original = 1
-set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 13
+" Set fonts
+if has("gui_macvim")
+	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
+else
+	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 13
+endif
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
