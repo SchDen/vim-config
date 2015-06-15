@@ -1,9 +1,12 @@
 "------------------------------------------------
 " BASE SETTINGS
-"------------------------------------------------
+"------------------------------------------------  
 syntax enable
 set background=dark
 set tabstop=4
+set path=$PWD/**
+set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+
 
 " Space key - <leader>
 set ignorecase                          " Ignore case while searching.
@@ -17,7 +20,7 @@ let mapleader = " "
 " THEME
 "------------------------------------------------
 let g:molokai_original = 1
-set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
+set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 13
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -105,16 +108,26 @@ endif
 " BASE BINDS
 "------------------------------------------------
 
+" Hide heightlight 
+map <leader>h :nohl<cr>
+
+" Find 
+map <leader>f :find
+
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Use CTRL-S for saving, also in Insert mode
+" Use space+w for saving, also in Insert mode
 noremap <leader>w :write<CR>
 vnoremap <leader>w <esc>:write<CR>
-inoremap <leader>w <esc>:write<CR>
+"inoremap <leader>w <esc>:write<CR>
+
+" Use space+w for saving, also in Insert mode
+noremap <leader>h :bp<CR>
+noremap <leader>l :bn<CR>   
 
 "------------------------------------------------
 " /BASE BINDS
