@@ -6,6 +6,10 @@ set background=dark
 set tabstop=4
 set path=$PWD/**
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+set nowrap
+
+"Swapfiles
+set directory=$HOME/.vim/swapfiles
 
 
 " Space key - <leader>
@@ -13,7 +17,7 @@ set ignorecase                          " Ignore case while searching.
 
 let mapleader = " "
 "------------------------------------------------
-" BASE SETTINGS
+" /BASE SETTINGS
 "------------------------------------------------
 
 "------------------------------------------------
@@ -24,7 +28,7 @@ let g:molokai_original = 1
 if has("gui_macvim")
 	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
 else
-	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 13
+	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 11
 endif
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -112,6 +116,10 @@ endif
 "------------------------------------------------
 " BASE BINDS
 "------------------------------------------------
+" Copy in system bufer
+nnoremap y "+y
+vnoremap y "+y
+
 
 " Hide heightlight 
 map <leader>h :nohl<cr>
@@ -131,8 +139,8 @@ vnoremap <leader>w <esc>:write<CR>
 "inoremap <leader>w <esc>:write<CR>
 
 " Use space+w for saving, also in Insert mode
-noremap <leader>h :bp<CR>
-noremap <leader>l :bn<CR>   
+noremap <leader>j :bp<CR>
+noremap <leader>k :bn<CR>   
 
 "------------------------------------------------
 " /BASE BINDS
@@ -143,7 +151,7 @@ noremap <leader>l :bn<CR>
 "------------------------------------------------
 abbr rev so %
 abbr vrc e ~/.vimrc
-abbr vrc e .vimrc
+abbr pvrc e .vimrc
 "------------------------------------------------
 " /ABBRS
 "------------------------------------------------
