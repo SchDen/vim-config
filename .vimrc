@@ -7,6 +7,9 @@ set tabstop=4
 set path=$PWD/**
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set nowrap
+" Disable beep
+set noerrorbells
+set novisualbell
 
 "Swapfiles
 set directory=$HOME/.vim/swapfiles
