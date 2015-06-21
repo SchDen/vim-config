@@ -7,12 +7,26 @@ set tabstop=4
 set path=$PWD/**
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set nowrap
+
 " Disable beep
 set noerrorbells
 set novisualbell
+" /Disable beep
+"
+" Local
+setlocal spell spelllang=ru_yo,en_us
+" /Local
 
-"Swapfiles
+" Russian key
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+" /Russian key
+
+" Swap files
 set directory=$HOME/.vim/swapfiles
+" /Swap files
 
 
 " Space key - <leader>
@@ -128,22 +142,30 @@ vnoremap y "+y
 map <leader>h :nohl<cr>
 
 " Find 
-map <leader>f :find
+map <leader>f :find 
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+" /
 
 " Use space+w for saving, also in Insert mode
 noremap <leader>w :write<CR>
 vnoremap <leader>w <esc>:write<CR>
+" /
 "inoremap <leader>w <esc>:write<CR>
 
 " Use space+w for saving, also in Insert mode
 noremap <leader>j :bp<CR>
 noremap <leader>k :bn<CR>   
+" /
+
+" Set en local after esc key
+imap :!setxkbmap us:!setxkbmap us,ru
+nmap :!setxkbmap us:!setxkbmap us,ru
+" /
 
 "------------------------------------------------
 " /BASE BINDS
