@@ -4,7 +4,7 @@
 syntax enable
 set background=dark
 set tabstop=4
-set path=$PWD/**
+set path=$pwd/**
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set nowrap
 
@@ -137,6 +137,14 @@ endif
 nnoremap y "+y
 vnoremap y "+y
 
+" Tab/Shift + tab
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+inoremap <Tab> <C-t>
+inoremap <S-Tab> <C-d>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+" /
 
 " Hide heightlight 
 map <leader>h :nohl<cr>
