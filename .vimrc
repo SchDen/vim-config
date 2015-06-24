@@ -5,7 +5,7 @@ syntax enable
 set background=dark
 set tabstop=4
 set path=$pwd/**
-set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+"set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set nowrap
 
 " Disable beep
@@ -146,6 +146,13 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 " /
 
+" No move to next
+nnoremap * *N
+" /
+
+" В визуальном режиме по команде * подсвечивать выделение
+vnoremap * y :execute ":let @/=@\""<CR> :execute "set hlsearch"<CR>
+
 " Hide heightlight 
 map <leader>h :nohl<cr>
 
@@ -171,8 +178,8 @@ noremap <leader>k :bn<CR>
 " /
 
 " Set en local after esc key
-imap :!setxkbmap us:!setxkbmap us,ru
-nmap :!setxkbmap us:!setxkbmap us,ru
+"imap :!setxkbmap us:!setxkbmap us,ru
+"nmap :!setxkbmap us:!setxkbmap us,ru
 " /
 
 "------------------------------------------------
