@@ -4,15 +4,15 @@
 syntax enable
 set background=dark
 set tabstop=4
-set path=$pwd/**
+set path=$PWD/**
 "set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set nowrap
 
 " Disable beep
-set noerrorbells
-set novisualbell
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 " /Disable beep
-"
+
 " Local
 setlocal spell spelllang=ru_yo,en_us
 " /Local
@@ -28,11 +28,25 @@ highlight lCursor guifg=NONE guibg=Cyan
 set directory=$HOME/.vim/swapfiles
 " /Swap files
 
+" Ignore case while searching.
+set ignorecase                          
+" умные автоотступы
+set ai 
+" отступы в стиле Си
+set cin 
+set smartindent
+" Преобразование Таба в пробелы
+set expandtab
+
+
+" Увеличение истории
+set history=200
 
 " Space key - <leader>
-set ignorecase                          " Ignore case while searching.
-
 let mapleader = " "
+
+" Отображение спецсимволов
+set list listchars=tab:⋮\ ,trail:·
 "------------------------------------------------
 " /BASE SETTINGS
 "------------------------------------------------
@@ -108,6 +122,17 @@ map <F1> :NERDTreeToggle<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
 "--- /NERDTree
 
+"--- Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"--- /Syntastic
+
 filetype indent plugin on
 "------------------------------------------------
 " /VIM LIB 
@@ -154,7 +179,7 @@ nnoremap * *N
 vnoremap * y :execute ":let @/=@\""<CR> :execute "set hlsearch"<CR>
 
 " Hide heightlight 
-map <leader>h :nohl<cr>
+map <silent><leader>h :nohl<CR> :set nospell<CR>
 
 " Find 
 map <leader>f :find 
@@ -184,6 +209,37 @@ noremap <leader>k :bn<CR>
 
 "------------------------------------------------
 " /BASE BINDS
+"------------------------------------------------
+
+"------------------------------------------------
+" Functions
+"------------------------------------------------
+
+"--- Автодополнение на Tab
+function! SuperCleverTab()
+	if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+		return "\<Tab>"
+	else
+		return "\<C-p>"
+	endif
+endfunction
+
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+"--- Автодополнение на Tab
+
+"--- Удаление лидирующих пробелов
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType javascript,php,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+"--- Удаление лидирующих пробелов
+
+"------------------------------------------------
+" Functions
 "------------------------------------------------
 
 "------------------------------------------------
