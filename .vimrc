@@ -131,25 +131,37 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=3
+let g:syntastic_warning_symbol = "⚠"
 "--- /Syntastic
+
+"--- Switcher
+let g:switch_definitions =
+    \ [
+    \   ['asc','desc'],
+    \   ['public','protected','private'],
+    \   ['true','false'],
+    \   ['assertTrue','assertFalse'],
+    \   ['addClass','removeClass'],
+    \   ['disable','enable'],
+    \   ['left','right'],
+    \ ]
+
+" Bind
+noremap ,, :Switch<CR>
+"--- /Switcher
 
 filetype indent plugin on
 "------------------------------------------------
 " /VIM LIB 
 "------------------------------------------------
 
+
 "------------------------------------------------
 " AUTO COMMAND
 "------------------------------------------------
-if has('autocmd')                       
-	augroup vimrc
-		autocmd!
+if has('autocmd')
 
-		" Strip whitespace from various filetypes that I use.
-		 autocmd BufWritePre *.css,*.html,*.md,*.php,*.py,*.rb,*.js,*.vim
-			\ silent! :StripWhitespace
-
-	augroup END
 endif
 "------------------------------------------------
 " /AUTO COMMAND
@@ -161,6 +173,7 @@ endif
 " Copy in system bufer
 nnoremap y "+y
 vnoremap y "+y
+" /
 
 " Tab/Shift + tab
 vmap <Tab> >gv
@@ -199,7 +212,7 @@ vnoremap <leader>w <esc>:write<CR>
 
 " Use space+w for saving, also in Insert mode
 noremap <leader>j :bp<CR>
-noremap <leader>k :bn<CR>   
+noremap <leader>k :bn<CR>
 " /
 
 " Set en local after esc key
@@ -239,7 +252,7 @@ autocmd FileType javascript,php,python autocmd BufWritePre <buffer> :call <SID>S
 "--- Удаление лидирующих пробелов
 
 "------------------------------------------------
-" Functions
+" /Functions
 "------------------------------------------------
 
 "------------------------------------------------
