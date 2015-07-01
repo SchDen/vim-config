@@ -138,6 +138,8 @@ let g:syntastic_warning_symbol = "⚠"
 "--- Switcher
 let g:switch_definitions =
     \ [
+    \   [';',',', '.'],
+    \   ['get','set'],
     \   ['asc','desc'],
     \   ['public','protected','private'],
     \   ['true','false'],
@@ -182,6 +184,10 @@ inoremap <Tab> <C-t>
 inoremap <S-Tab> <C-d>
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+" /
+
+" Select in quotes
+nnoremap <C-a> vi'
 " /
 
 " No move to next
