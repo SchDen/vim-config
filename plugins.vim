@@ -5,3 +5,6 @@ Plugin 'vim_prj'
 Plugin 'nerdtree'
 Plugin 'syntastic'
 Plugin 'switch'
+"Snippets
+Plugin 'ultisnips'
+Plugin 'vim-snippets'
