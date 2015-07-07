@@ -57,10 +57,11 @@ set list listchars=tab:⋮\ ,trail:·
 let g:molokai_original = 1
 " Set fonts
 if has("gui_macvim")
-	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h13
 else
-	set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 11
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 11
 endif
+
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -82,12 +83,17 @@ set smarttab                            " Use shiftwidth when using <Tab> in
                                         " front of a line.
 set softtabstop=4                       " How many spaces should a tab be
                                         " when hitting <Tab> or backspace.
-set synmaxcol=121                       " No syntax highlighting on long lines.
+set synmaxcol=240                       " No syntax highlighting on long lines.
 
 set wildmenu                            " Autocomplete commands.
 set wildmode=longest:full,full          " Autocomplete til the longest common
                                         " string and the next full match.
-										"
+" Подсветка после 80 строк 
+if exists('+colorcolumn')
+  set colorcolumn=120
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
+endif
 
 if has('gui_running')
 	" THEME
@@ -140,6 +146,8 @@ let g:switch_definitions =
     \ [
     \   [';',',', '.'],
     \   ['get','set'],
+    \   ['get(','set('],
+    \   ['.get(','.set('],
     \   ['asc','desc'],
     \   ['public','protected','private'],
     \   ['true','false'],
