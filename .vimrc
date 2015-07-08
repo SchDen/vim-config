@@ -157,19 +157,20 @@ let g:switch_definitions =
     \   ['left','right'],
     \ ]
 
-" Bind
-noremap ,, :Switch<CR>
+" Bind 
+nnoremap ,, :Switch<CR>
 "--- /Switcher
 
 "--- Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "--- /Snippets
+
 
 filetype indent plugin on
 "------------------------------------------------
@@ -254,11 +255,11 @@ noremap <leader>k :bn<CR>
 
 "--- Автодополнение на Tab
 function! SuperCleverTab()
-	if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-		return "\<Tab>"
-	else
-		return "\<C-p>"
-	endif
+    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+        return "\<Tab>"
+    else
+        return "\<C-p>"
+    endif
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
