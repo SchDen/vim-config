@@ -171,6 +171,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 "--- /Snippets
 
+"--- Tagbar
+nmap <F2> :TagbarToggle<CR>
+"--- /Tagbar
+
 
 filetype indent plugin on
 "------------------------------------------------
