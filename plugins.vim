@@ -10,3 +10,4 @@ Plugin 'ultisnips'
 Plugin 'vim-snippets'
 "--- /Snippets
 Plugin 'tagbar'
+Plugin 'emmet-vim'
