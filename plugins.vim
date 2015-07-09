@@ -15,3 +15,4 @@ Plugin 'vim-snippets'
 Plugin 'tagbar'
 Plugin 'tern_for_vim'
 "--- /Tagsbar
+Plugin 'emmet-vim'

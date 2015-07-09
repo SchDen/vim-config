@@ -175,6 +175,11 @@ let g:UltiSnipsEditSplit="vertical"
 nmap <F2> :TagbarToggle<CR>
 "--- /Tagbar
 
+"--- Emmet-vim
+" Кнопка активации
+let g:user_emmet_leader_key='<C-Z>'
+"--- /Emmet-vim
+
 
 filetype indent plugin on
 "------------------------------------------------
