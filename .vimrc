@@ -126,7 +126,12 @@ let g:airline#extensions#tabline#enabled = 1
 "--- NERDTree
 map <F1> :NERDTreeToggle<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
+"-- Установка папки для поиска файлов
+" при изменении текущей рабочей директории
+"set autochdir
+let NERDTreeChDirMode=1
 "--- /NERDTree
+
 
 "--- Syntastic
 set statusline+=%#warningmsg#
@@ -147,7 +152,7 @@ let g:switch_definitions =
     \   [';',',', '.'],
     \   ['get','set'],
     \   ['get(','set('],
-    \   ['.get(','.set('],
+    \   ['\.get(','\.set('],
     \   ['asc','desc'],
     \   ['public','protected','private'],
     \   ['true','false'],
@@ -177,7 +182,7 @@ nmap <F2> :TagbarToggle<CR>
 
 "--- Emmet-vim
 " Кнопка активации
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-M>'
 "--- /Emmet-vim
 
 
