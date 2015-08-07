@@ -182,7 +182,7 @@ nmap <F2> :TagbarToggle<CR>
 
 "--- Emmet-vim
 " Кнопка активации
-let g:user_emmet_leader_key='<C-M>'
+let g:user_emmet_leader_key='<C-N>'
 "--- /Emmet-vim
 
 
