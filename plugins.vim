@@ -1,4 +1,5 @@
-Plugin 'vim_start'
+Plugin 'vim-misc'
+Plugin 'vim-session'
 Plugin 'vim-airline'
 Plugin 'vim-fugitive'
 Plugin 'vim_prj'

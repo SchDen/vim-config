@@ -6,6 +6,8 @@ set background=dark
 set tabstop=4
 set path=$PWD/**
 "set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+
+
 set nowrap
 
 " Disable beep
@@ -29,7 +31,7 @@ set directory=$HOME/.vim/swapfiles
 " /Swap files
 
 " Ignore case while searching.
-set ignorecase                          
+set ignorecase
 " умные автоотступы
 set ai 
 " отступы в стиле Си
@@ -185,6 +187,12 @@ nmap <F2> :TagbarToggle<CR>
 let g:user_emmet_leader_key='<C-N>'
 "--- /Emmet-vim
 
+"--- Vim session
+let g:session_directory = "~/.vim/tmp/session"
+let g:session_autoload = "no"
+let g:session_autosave = "no"
+let g:session_command_aliases = 1
+"--- /Vim session
 
 filetype indent plugin on
 "------------------------------------------------
