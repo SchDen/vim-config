@@ -3,7 +3,8 @@
 - https://github.com/bling/vim-airline
 - https://github.com/tpope/vim-fugitive
 - https://github.com/Bashka/vim_prj
-- https://github.com/Bashka/vim_start
+- https://github.com/xolox/vim-session
+- https://github.com/xolox/vim-misc.git
 - ...
 
 ##Install
