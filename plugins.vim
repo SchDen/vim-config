@@ -7,6 +7,7 @@ Plugin 'nerdtree'
 Plugin 'syntastic'
 Plugin 'switch'
 Plugin 'command-t'
+Plugin 'nerdcommenter'
 
 "--- Snippets
 Plugin 'ultisnips'
