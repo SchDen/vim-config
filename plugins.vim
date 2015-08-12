@@ -6,6 +6,7 @@ Plugin 'vim_prj'
 Plugin 'nerdtree'
 Plugin 'syntastic'
 Plugin 'switch'
+Plugin 'command-t'
 
 "--- Snippets
 Plugin 'ultisnips'
