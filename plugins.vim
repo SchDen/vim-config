@@ -8,6 +8,7 @@ Plugin 'syntastic'
 Plugin 'switch'
 Plugin 'command-t'
 Plugin 'nerdcommenter'
+Plugin 'vim-easytags'
 
 "--- Snippets
 Plugin 'ultisnips'
