@@ -3,12 +3,7 @@
 "------------------------------------------------  
 syntax enable
 set background=dark
-set tabstop=4
 set path=$PWD/**
-"set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
-
-
-set nowrap
 
 " Disable beep
 set noerrorbells visualbell t_vb=
@@ -29,17 +24,6 @@ highlight lCursor guifg=NONE guibg=Cyan
 " Swap files
 set directory=$HOME/.vim/swapfiles
 " /Swap files
-
-" Ignore case while searching.
-set ignorecase
-" умные автоотступы
-set ai 
-" отступы в стиле Си
-set cin 
-set smartindent
-" Преобразование Таба в пробелы
-set expandtab
-
 
 " Увеличение истории
 set history=200
@@ -83,14 +67,19 @@ set shiftwidth=4                        " Use four spaces when auto-indenting.
 set smartindent                         " Smart autoindenting for new lines.
 set smarttab                            " Use shiftwidth when using <Tab> in
                                         " front of a line.
+set nowrap                              " Не переносить строку
+set autoindent                          " копирует отступы с текущей строки при добавлении новой.
 set softtabstop=4                       " How many spaces should a tab be
+set tabstop=4                           " Количество пробелов, которыми символ табуляции отображается в тексте.
                                         " when hitting <Tab> or backspace.
-set synmaxcol=240                       " No syntax highlighting on long lines.
+set ignorecase                          " Ignore case while searching.
+set cin                                 " отступы в стиле Си
+set expandtab                           " Преобразование Таба в пробелы
 
 set wildmenu                            " Autocomplete commands.
 set wildmode=longest:full,full          " Autocomplete til the longest common
                                         " string and the next full match.
-" Подсветка после 80 строк 
+" Отключение подсветки после 120 строк 
 if exists('+colorcolumn')
   set colorcolumn=120
 else
@@ -98,9 +87,10 @@ else
 endif
 
 if has('gui_running')
-	" THEME
-	colorscheme apprentice
+    " THEME
+    colorscheme apprentice
 endif
+set synmaxcol=240                       " No syntax highlighting on long lines.
 "------------------------------------------------
 " /THEME
 "------------------------------------------------
@@ -117,9 +107,9 @@ Plugin 'vim_plugmanager'
 
 source ~/.vim/plugins.vim
 
-" ----------------
+"------------------------------------------------
 "  Plugin settings
-" ----------------
+"------------------------------------------------
 "--- vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -131,7 +121,7 @@ nnoremap <leader>e :NERDTreeFind<CR>
 "-- Установка папки для поиска файлов
 " при изменении текущей рабочей директории
 "set autochdir
-let NERDTreeChDirMode=1
+"let NERDTreeChDirMode=1
 "--- /NERDTree
 
 
@@ -193,6 +183,17 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 "--- /Vim session
+
+"--- Vim easytags
+let g:easytags_languages = {
+\   'language': {
+\       'recurse_flag': '-R'
+\   }
+\}
+:let g:easytags_file = '~/.vim/tmp/tags'
+" Рекурсивная проверка директории
+:let g:easytags_autorecurse = 1
+"--- /Vim easytags
 
 filetype indent plugin on
 "------------------------------------------------
