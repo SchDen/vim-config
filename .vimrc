@@ -306,9 +306,9 @@ autocmd FileType javascript,php,python autocmd BufWritePre <buffer> :call <SID>S
 "------------------------------------------------
 " ABBRS
 "------------------------------------------------
-abbr rev so %
-abbr vrc e ~/.vimrc
-abbr pvrc e .vimrc
+"abbr rev so %
+"abbr vrc e ~/.vimrc
+"abbr pvrc e .vimrc
 "------------------------------------------------
 " /ABBRS
 "------------------------------------------------
